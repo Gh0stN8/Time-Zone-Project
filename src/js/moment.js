@@ -1,4 +1,4 @@
-import moment from 'moment';
+
 import 'moment-timezone';
 
 // Display the current time in local time zone

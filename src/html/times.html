@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeTracker - Time Zones</title>
+  <link rel="stylesheet" href="times.css">
+</head>
+<body>
+  <header>
+    <h1>TimeZone Tracker</h1>
+    <nav>
+      <button id="logout-button">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="welcome-section">
+      <h2>Welcome, <span id="user-name"></span>!</h2>
+      <p>Here are the current times in your selected time zones:</p>
+    </section>
+
+    <section id="time-display">
+      <h2>Current Times</h2>
+      <div id="time-zones-container">
+        <!-- Times will be dynamically added here -->
+      </div>
+    </section>
+
+    <section id="time-zone-selector">
+      <h2>Add a Time Zone</h2>
+      <form id="time-zone-form">
+        <label for="time-zone">Select Time Zone:</label>
+        <select id="time-zone" name="time-zone">
+          <option value="America/New_York">New York (EST)</option>
+          <option value="Europe/London">London (GMT)</option>
+          <option value="Asia/Tokyo">Tokyo (JST)</option>
+          <option value="Australia/Sydney">Sydney (AEST)</option>
+          <option value="UTC">UTC</option>
+          <!-- Add more time zones as needed -->
+        </select>
+        <button type="submit">Add</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 TimeTracker</p>
+  </footer>
+
+  <script src="moment.js"></script>
+  <script src="times.js"></script>
+</body>
+</html>

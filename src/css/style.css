@@ -68,7 +68,7 @@
   }
   
   #timezone-converter {
-    display: none; /* Hidden by default, displayed on login */
+    display: none; 
   }
   
   select {

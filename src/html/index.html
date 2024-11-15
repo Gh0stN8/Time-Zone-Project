@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeTracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>TimeZone</h1>
+  </header>
+
+  <main>
+    
+   
+
+    <section id="time-display">
+      <h2>Current Date and Time</h2>
+      <p id="current-time">Log-in to view times by zone</p>
+    </section>
+
+    
+
+    <section id="auth">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Login</button>
+      </form>
+      <div id="login-message"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+  </footer>
+
+
+  <script src="moment.js">
+
+    console.log("JavaScript is loaded");
+
+  
+    document.getElementById("login-form").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Prevents form from reloading the page
+  
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const loginMessage = document.getElementById("login-message");
+  
+      // This part simulates calling the backend function (e.g., make_jwt) to authenticate
+      // You may need to replace this with an actual API call if you have a backend set up.
+      const response = await fakeAuthenticate(username, password);
+  
+      if (response.success) {
+        loginMessage.textContent = "Login successful!";
+        loginMessage.style.color = "green";
+        // Redirect to the second page or show different content
+        window.location.href = "dashboard.html"; // Replace with your actual page
+      } else {
+        loginMessage.textContent = "Invalid username or password.";
+        loginMessage.style.color = "red";
+      }
+    });
+  
+    // Simulated authentication function for demo purposes
+    async function fakeAuthenticate(username, password) {
+      // Replace this with an actual call to your backend API
+      if ((username === "admin" && password === "admin") || (username === "Duane" && password === "matrix")) {
+        return { success: true };
+      } else {
+        return { success: false };
+      }
+    }
+  </script>
+  
+</body>
+</html>

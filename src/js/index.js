@@ -1,6 +1,9 @@
 import moment from 'moment';
 import axios from 'axios';
 
+//console.log("JavaScript is loaded");
+
+
 const currentTimeElement = document.getElementById('current-time');
 const updateTime = () => {
   currentTimeElement.textContent = moment().format('YYYY-MM-DD HH:mm:ss');
@@ -38,4 +41,6 @@ convertButton.addEventListener('click', async () => {
     console.error('Time conversion failed', error);
   }
 });
+
+
 
